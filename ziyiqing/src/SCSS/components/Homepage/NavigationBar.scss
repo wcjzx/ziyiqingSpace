@@ -1,0 +1,32 @@
+
+$f-size: 25px;
+@mixin fontgs {
+  margin-left: 70px;
+  line-height: 50px;
+  font-size: 25px;
+}
+.navigationBar {
+  .navigation {
+    height: 50px;
+    background-color: rgba(144, 184, 190, 0.861);
+    padding: 0px;
+    .name {
+      @include fontgs();
+    }
+    .nav {
+      float: right;
+      @include fontgs;
+      margin-right: 10px;
+      height: 50px;
+      .link:last-child {
+        margin-right: 50px;
+      }
+      .link {
+        text-decoration: none;
+        font-size: 20px;
+        margin: 10px;
+      }
+    }
+  }
+  
+}

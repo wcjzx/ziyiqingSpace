@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.CategorylistMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.Categorylist">
+            <id property="cid" column="Cid" jdbcType="INTEGER"/>
+            <result property="categoryname" column="categoryName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Cid,categoryName
+    </sql>
+    <insert id="addCategory">
+        insert into categorylist(categoryName) values (#{cname})
+    </insert>
+    <select id="selectLastId" resultType="java.lang.Integer">
+        select Cid from categorylist order by Cid desc limit 1
+    </select>
+    <select id="getCategoryIdByName" resultType="java.lang.Integer">
+        select Cid from categorylist where categoryName = #{cname}
+    </select>
+
+</mapper>

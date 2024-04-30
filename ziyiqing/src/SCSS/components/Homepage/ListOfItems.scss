@@ -1,0 +1,19 @@
+
+@import "@/common/common";
+.listOfItems {
+  display: flex;
+  justify-content: space-between;
+  .list {
+    text-align: center;
+    div:first-child {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    div:nth-child(3) {
+      font-size: 30px;
+    }
+    @include cardStyle;
+    width: 200px;
+    height: 150px;
+  }
+}

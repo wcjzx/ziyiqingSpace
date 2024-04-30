@@ -1,0 +1,53 @@
+
+@import "@/common/common";
+.technologyStack {
+  .context {
+    // background: $c5;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .top {
+      height: 80px;
+      width: 200px;
+      //   background: $c2;
+      border-radius: 20px;
+      border-bottom: 2px solid #020c1d;
+      h1 {
+        text-align: center;
+      }
+    }
+    .botton {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      .double {
+        height: 200px;
+        width: 300px;
+        background: #fff;
+        margin: 10px;
+        border-radius: 20px;
+        .b-top {
+          h2 {
+            margin-bottom: 0;
+          }
+          b {
+            margin: 0px;
+          }
+        }
+        .b-botton {
+          text-align: left;
+          ul {
+            margin-left: 30px;
+            li {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

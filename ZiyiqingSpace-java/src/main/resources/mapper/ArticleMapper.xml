@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ArticleMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.Article">
+            <id property="aid" column="Aid" jdbcType="INTEGER"/>
+            <result property="articlename" column="ArticleName" jdbcType="VARCHAR"/>
+            <result property="articleintro" column="ArticleIntro" jdbcType="VARCHAR"/>
+            <result property="articlecontent" column="ArticleContent" jdbcType="VARCHAR"/>
+            <result property="articlephoto" column="ArticlePhoto" jdbcType="VARCHAR"/>
+            <result property="articlecreatetime" column="ArticleCreateTime" jdbcType="TIMESTAMP"/>
+            <result property="cid" column="Cid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Aid,ArticleName,ArticleIntro,
+        ArticleContent,ArticlePhoto,ArticleCreateTime,
+        Cid
+    </sql>
+
+    <insert id="addArtcileId">
+        INSERT INTO article (Aid)
+        VALUES (DEFAULT)
+    </insert>
+    <update id="updateLikes">
+        UPDATE article
+        SET dianzhan = #{likeCount}
+        WHERE Aid = #{aid}
+    </update>
+    <update id="updateCollect">
+        UPDATE article
+        SET shouchang = #{collectCount}
+        WHERE Aid = #{aid}
+    </update>
+    <select id="selectTagByAid" resultType="java.lang.String">
+
+            SELECT t.tabname
+            FROM tab t
+                     INNER JOIN Relationarticleandtab at
+            ON t.tid=at.tid
+            WHERE at.aid = #{aid}
+
+    </select>
+    <select id="lasterArticle" resultType="com.example.pojo.diypojo.ArticleInfo">
+        SELECT *
+        FROM Article
+        ORDER BY ArticleCreateTime DESC
+        LIMIT #{num}
+    </select>
+    <select id="lastArticleId" resultType="java.lang.Integer">
+        SELECT LAST_INSERT_ID()
+    </select>
+    <select id="selectArticleById" resultType="com.example.pojo.Article">
+        SELECT *
+        FROM Article
+        WHERE Aid = #{aid}
+    </select>
+    <select id="selectArticleByCategoryId" resultType="com.example.pojo.Article">
+        SELECT *
+        FROM Article
+        WHERE Cid = #{categoryId}
+    </select>
+    <select id="searchByTitle" resultType="com.example.pojo.Article">
+        SELECT *
+        FROM article
+        WHERE ArticleName LIKE CONCAT('%',#{title},'%')
+    </select>
+
+</mapper>

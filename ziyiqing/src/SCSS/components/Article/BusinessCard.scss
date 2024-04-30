@@ -1,0 +1,62 @@
+.businessCard {
+  height: 230px;
+  background: #fff1ff;
+  border-radius: 10%;
+  display: flex;
+  // 设置主轴为垂直方向
+  flex-direction: column;
+  .top {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // flex布局副轴方向居中对齐
+    align-items: center;
+    .img{
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-top: 10px ;
+        float: left;
+      }
+    }
+    .name{
+      h4{
+        margin-top:15px ;
+        padding: 0px;
+      }
+     
+    }
+  }
+  .middle {
+    padding-top: 10px;
+    // padding: 0;
+    // border-top: 2px solid #020c1d;
+    height: 20%;
+    div{
+      display: flex;
+      justify-content: center;
+      // align-items: center;
+      // 设置可以换行
+      // flex-wrap: wrap;
+      div {
+        font-size: 15px;
+        width: 30%;
+        margin-right:15px ;
+      }
+    }
+  
+  }
+  div{
+    // 盒子居中对齐
+    margin: 0px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+   
+  }
+    
+  
+
+}

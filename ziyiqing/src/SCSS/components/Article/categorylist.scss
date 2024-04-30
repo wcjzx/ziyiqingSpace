@@ -1,0 +1,21 @@
+.categoryList {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #456471;
+    height: 300px;
+    border-radius: 10%;
+    padding-top: 10px;
+    .categorylist-title {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    .categorylist-content {
+        margin: 10px;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}

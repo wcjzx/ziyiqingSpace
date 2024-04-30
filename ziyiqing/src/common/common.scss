@@ -1,0 +1,18 @@
+//Homepage
+// 开发颜色使用
+$c1:#EF7C8E;
+$c2:#FAE8E0;
+$c3:#B6E2D3;
+$c4:#D8A7B1;
+$c5:#67595E;
+
+@mixin cardStyle{ 
+    border-radius:20px ;
+    // background: rgba(51, 68, 85, 0.242);
+    &:hover{
+        box-shadow: rgb(185, 183, 183) 0px 0px 15px 3px;
+    }
+     box-shadow: rgb(185, 183, 183) 0px 0px 10px 1px;//边框内阴影
+    
+}
+

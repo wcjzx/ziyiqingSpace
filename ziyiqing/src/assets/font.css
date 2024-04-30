@@ -1,0 +1,10 @@
+@font-face {
+        /* font-family: 'YeZiGongChangYanShanTingXingKai';
+        src:url('@/assets/fonts/YeZiGongChangYanShanTingXingKai-2.ttf'); */
+        font-family: 'HYZhengYuan-65S';
+        src:url('@/assets/fonts/HYZhengYuan-65S.otf');
+        /* font-family: 'AlimamaDongFangDaKai-Regular';
+        src:url('@/assets/fonts/AlimamaDongFangDaKai-Regular.ttf'); */
+        /* font-family: '大宝桃桃体';
+        src:url('@/assets/fonts/大宝桃桃体.ttf'); */
+    }    

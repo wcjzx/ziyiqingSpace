@@ -1,0 +1,52 @@
+.timeline {
+  // background: #763f7e;
+  width: 350px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  .box {
+    width: 800px;
+    margin: 0px auto ;
+    padding: 0px;
+    /* background: #052152; */
+    box-sizing: border-box;
+    ul {
+      margin: 0;
+      padding: 0;
+      border-left: 2px solid #020c1d;
+    }
+    li {
+      list-style: none;
+      .item {
+        position: relative;
+        padding: 10px 20px;
+       
+        span {
+          padding: 4px 12px;
+          background: #763fbe;
+          border-radius: 15px;
+          color: #fff;
+        }
+      }
+      h3 {
+        padding: 0px;
+      }
+    }
+  }
+}
+.achievement {
+margin-top: 15px;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
