@@ -31,23 +31,29 @@
 </template>
 <script setup lang="js">
 // import categoryList from "@/components/Article/CategoryList.vue";
-import articleList from "@/components/Article/ArticleList.vue";
 import search from "@/components/Article/Search.vue";
-import { ref, onMounted, onUnmounted, onBeforeUnmount, computed, defineEmits, defineComponent } from "vue";
+import { ref, onMounted, onUnmounted, onBeforeUnmount, computed, defineEmits, defineComponent, onBeforeMount } from "vue";
 import { useStore } from "@/pinia/index.js";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
 const store = useStore();
 const categoryList = ref(
   []
 );
+const searchQuery = ref('1');
+onBeforeMount(() => {
+});
+const moduleTop = ref(125)
+const scrollThreshold = ref(126)// 分类模块顶部的位置  
+const offset = 126;
 store.getArticleCategoryInfo().then(() => {
   // 假设 getArticleCategoryInfo 返回一个 Promise，并在数据加载完成后更新 categoryList  
   categoryList.value = store.Category;
 });
 // #region 搜索功能
-import { useRouter } from "vue-router";
-const router = useRouter();
 
-const searchQuery = ref('1');
+
 function handleSearchResults(results) {
   searchQuery.value = results;
   // console.log(searchQuery.value);
@@ -59,17 +65,9 @@ function handleSearchResults(results) {
   }  },
     )
 }
-
-// function handleSearchFlag(results) {
-//   searchFlag.value = results;
-//   console.log(searchFlag.value)
-// }
-
 // #endregion
 // #region 分类模块的悬停效果
-const moduleTop = ref(125)
-const scrollThreshold = ref(126)// 分类模块顶部的位置  
-const offset = 126;
+
 const handleScroll = () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   if (scrollTop > scrollThreshold) {
@@ -87,7 +85,7 @@ onMounted(() => {
 });
 
 // 在组件卸载前移除滚动事件监听器  
-onUnmounted(() => {
+onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
 });
 // #endregion

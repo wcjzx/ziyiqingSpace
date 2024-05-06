@@ -55,12 +55,12 @@
         <div class="quote">
           <div>"人生如逆旅，你我亦行人" -- 谢谢访问！--</div>
         </div>
-        <div class="gif">
+        <!-- <div class="gif">
           <img
             src="c:/Users/yaoyuhang/Downloads/icons8-car-2--unscreen.gif"
             alt=""
           />
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

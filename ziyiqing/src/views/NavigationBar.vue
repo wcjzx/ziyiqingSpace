@@ -39,22 +39,18 @@
  <script setup lang="js">
 import { ref,reactive, onBeforeMount,onMounted, computed, watch,defineEmits, defineComponent } from "vue";
 import {RouterView,RouterLink,useRouter} from 'vue-router'
+import { useStore } from '@/pinia/index.js'
+const backgroundImagePath = ref('');
 const isShow = ref(true); 
 // 从store获取后端的个人信息数据
-import { useStore } from '@/pinia/index.js'
 const store = useStore();
-store.getUserInfo();
-console.log(store.userInfo)
-// 首次即加载主页信息
 const router = useRouter()
-// function showNewsDetail(){
-//   router.replace({
-//     name:'Homepage',
-//   })
-// } 
-// showNewsDetail()
+
+onBeforeMount(()=>{
+store.getUserInfo();
+})
+// 首次即加载主页信息
 // 根据路由路径设置背景图片
-const backgroundImagePath = ref('');
 watch(  
   () => router.currentRoute.value.fullPath,  
   (newValue) => {  
